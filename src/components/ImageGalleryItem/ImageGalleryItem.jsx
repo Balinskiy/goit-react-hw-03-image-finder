@@ -1,7 +1,12 @@
 import React from 'react';
+import { ImageGalleryItem } from './ImageGalleryItem.styled';
 
-const ImageGalleryItem = () => {
-  return <div>ImageGalleryItem</div>;
+const ImageItem = ({ webformatURL, tags, largeImageURL, onModalOpen }) => {
+  return (
+    <ImageGalleryItem onClick={() => onModalOpen(largeImageURL)}>
+      <img src={webformatURL} alt={tags} />
+    </ImageGalleryItem>
+  );
 };
 
-export default ImageGalleryItem;
+export default ImageItem;
